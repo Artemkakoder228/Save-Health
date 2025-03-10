@@ -37,26 +37,25 @@ document.getElementById('Wishes_btn').addEventListener('click', function() {
 let countOfHearts = 5;
 console.log('countOfHearts: ' + countOfHearts);
 
-document.getElementById('heartsforwishes').innerText = '💊' .repeat(countOfHearts)
+document.getElementById('heartsforwishes').innerText = '💊'.repeat(countOfHearts);
 
-document.getElementById('Wishes_btn').addEventListener('click', ()=> { 
-countOfHearts--;
-console.log('countOfHearts: ' + countOfHearts);
-document.getElementById('heartsforwishes').innerText = '💊' .repeat(countOfHearts) + '🤍' .repeat(5-countOfHearts);
-
-if (countOfHearts == 0) {
-  document.getElementById('Wishes_btn').style.display = 'none';
-}
+document.getElementById('Wishes_btn').addEventListener('click', () => {
+    countOfHearts--;
+    console.log('countOfHearts: ' + countOfHearts);
+    document.getElementById('heartsforwishes').innerText = '💊'.repeat(countOfHearts) + '🤍'.repeat(5 - countOfHearts);
+    
+    if (countOfHearts <= 0) {
+        document.getElementById('Wishes_btn').disabled = true;
+        alert("Ліміт натискань досягнуто!");
+    }
 });
 
-document.getElementById('btnbuyhearts').addEventListener('click', ()=> {
-
-countOfHearts = 5;
-document.getElementById('heartsforwishes').innerText = '💊' .repeat(countOfHearts);
-document.getElementById('Wishes_btn').style.display = 'inline-block';
-document.getElementById('p_Wishes').innerText = '';
-
-console.log('btnbuyhearts clicked!');
+document.getElementById('btnbuyhearts').addEventListener('click', () => {
+    countOfHearts = 5;
+    document.getElementById('heartsforwishes').innerText = '💊'.repeat(countOfHearts);
+    document.getElementById('Wishes_btn').disabled = false;
+    document.getElementById('p_Wishes').innerText = '';
+    console.log('btnbuyhearts clicked!');
 });
 
 const images = [

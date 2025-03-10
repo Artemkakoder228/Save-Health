@@ -142,6 +142,15 @@ h2 {
 
 .porada{
     text-align: center;
+    font-size: 36px;
+    color: black;
+}
+
+#p_Wishes{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #ffc5b3;
 }
 
 #Wishes_btn {
