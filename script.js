@@ -54,7 +54,7 @@ document.getElementById('btnbuyhearts').addEventListener('click', ()=> {
 countOfHearts = 5;
 document.getElementById('heartsforwishes').innerText = '💊' .repeat(countOfHearts);
 document.getElementById('Wishes_btn').style.display = 'inline-block';
-document.getElementById('p_wishes').innerText = '';
+document.getElementById('p_Wishes').innerText = '';
 
 console.log('btnbuyhearts clicked!');
 });
