@@ -1,4 +1,4 @@
-console.log('Scrip connected!');
+console.log('Script connected!');
 
 const arrayOfLoveWishes = [
   "Міцного здоров'я та довгих років життя!",
@@ -22,50 +22,52 @@ const arrayOfLoveWishes = [
   "Щоб жоден вірус не мав шансів перед твоїм імунітетом!",
   "Нехай твоє здоров'я буде бездоганним, а життя – щасливим!"
 ];
+
 document.getElementById('Wishes_btn').addEventListener('click', function() {
-  // alert('Button clicked!');
-
   console.log('Button clicked!');
-
   let index = Math.floor(Math.random() * arrayOfLoveWishes.length);
-
-  // console.log('Номер елементу масиву: ', index);
-
   document.getElementById('p_Wishes').innerText = arrayOfLoveWishes[index];
-})
+});
 
 let countOfHearts = 5;
 console.log('countOfHearts: ' + countOfHearts);
 
 document.getElementById('heartsforwishes').innerText = '💊'.repeat(countOfHearts);
 
-document.getElementById('Wishes_btn').addEventListener('click', () => {
-    countOfHearts--;
-    console.log('countOfHearts: ' + countOfHearts);
-    document.getElementById('heartsforwishes').innerText = '💊'.repeat(countOfHearts) + '🤍'.repeat(5 - countOfHearts);
+const wishesBtn = document.getElementById('Wishes_btn');
+const buyHeartsBtn = document.getElementById('btnbuyhearts');
+
+wishesBtn.addEventListener('click', () => {
+    if (countOfHearts > 0) {
+        countOfHearts--;
+        console.log('countOfHearts: ' + countOfHearts);
+        document.getElementById('heartsforwishes').innerText = '💊'.repeat(countOfHearts) + '🤍'.repeat(5 - countOfHearts);
+    }
     
     if (countOfHearts <= 0) {
-        document.getElementById('Wishes_btn').disabled = true;
+        wishesBtn.disabled = true;
+        wishesBtn.style.backgroundColor = 'grey';
         alert("Ліміт натискань досягнуто!");
     }
 });
 
-document.getElementById('btnbuyhearts').addEventListener('click', () => {
+buyHeartsBtn.addEventListener('click', () => {
     countOfHearts = 5;
     document.getElementById('heartsforwishes').innerText = '💊'.repeat(countOfHearts);
-    document.getElementById('Wishes_btn').disabled = false;
+    wishesBtn.disabled = false;
+    wishesBtn.style.backgroundColor = '';
     document.getElementById('p_Wishes').innerText = '';
+    document.getElementById('p_Wishes').style.backgroundColor = '';
     console.log('btnbuyhearts clicked!');
 });
 
 const images = [
-  "images/2254.jpg",
-  "images/14190.jpg",
-  "images/2149611232.jpg"
+  "images/gallery/254.jpg",
+  "images/gallery/14190.jpg",
+  "images/gallery/2149611232.jpg"
 ];
 
 let currentIndex = 0;
-
 const imageElement = document.getElementById("photo2");
 const prevButton = document.getElementById("photo1");
 const nextButton = document.getElementById("photo3");

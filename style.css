@@ -99,7 +99,7 @@ h2 {
   text-align: center;
 }
 
-#photo2 {
+.gallery #photo2 {
   width: 300px;
 }
 
@@ -149,8 +149,9 @@ h2 {
 #p_Wishes{
   font-size: 20px;
   text-align: center;
-  margin-top: 20px;
+  padding: 5px;
   background-color: #ffc5b3;
+  height: 50px;
 }
 
 #Wishes_btn {
