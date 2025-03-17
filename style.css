@@ -102,44 +102,29 @@ h2 {
   text-align: center;
 }
 
-.gallery #photo2 {
+.gallery {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.photo {
   width: 300px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   object-fit: cover;
   transition: opacity 0.5s ease-in-out;
-}
-
-.gallery #photo2:hover {
-  opacity: 0.7;
-}
-
-#photo1{
-  cursor: pointer;
-  width: 64px;
-  height: 64px;
-}
-
-.gallery #photo1:hover {
-  box-shadow: 0 10px 20px rgba(0, 2, 2, 0.5);
-}
-
-.gallery #photo1:active {
-  box-shadow: 0 10px 20px rgba(0, 0, 255, 0.5);
-}
-
-#photo3{
-  cursor: pointer;
-  width: 64px;
-  height: 64px;
-}
-
-.gallery #photo3:hover {
-  box-shadow: 0 10px 20px rgba(0, 2, 2, 0.5);
-}
-
-.gallery #photo3:active {
-  box-shadow: 0 10px 20px rgba(0, 0, 255, 0.5);
 }
 
 /*Підвал сайту з кнопкою купівлі 🧡*/

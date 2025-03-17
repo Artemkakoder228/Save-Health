@@ -71,31 +71,24 @@ const images = [
 ];
 
 let currentIndex = 0;
-const imageElement = document.getElementById("photo2");
-const prevButton = document.getElementById("photo1");
-const nextButton = document.getElementById("photo3");
+const photo = document.getElementById("photo2");
+const prevBtn = document.getElementById("photo1");
+const nextBtn = document.getElementById("photo3");
 
-function anim(images){
-  const photo2 = document.getElementById("photo2");
-  photo2.style.opacity = 0;
+function updateImage(index) {
+  photo.style.opacity = 0; // Затемнення перед зміною
   setTimeout(() => {
-    photo2setAttribute("src", `images/gallery/${img}.jpg`);
-    photo2.style.opacity = 1;
+      photo.src = images[index];
+      photo.style.opacity = 1; // Плавне повернення видимості
   }, 300);
 }
 
-function updateImage() {
-  imageElement.src = images[currentIndex];
-}
-
-prevButton.addEventListener("click", () => {
+prevBtn.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateImage();
+  updateImage(currentIndex);
 });
 
-nextButton.addEventListener("click", () => {
+nextBtn.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % images.length;
-  updateImage();
+  updateImage(currentIndex);
 });
-
-updateImage();
