@@ -64,13 +64,25 @@ buyHeartsBtn.addEventListener('click', () => {
 const images = [
   "images/gallery/254.jpg",
   "images/gallery/14190.jpg",
-  "images/gallery/2149611232.jpg"
+  "images/gallery/2149611232.jpg",
+  "images/gallery/2148168440.jpg",
+  "images/gallery/2149611193.jpg",
+  "images/gallery/2149611238.jpg"
 ];
 
 let currentIndex = 0;
 const imageElement = document.getElementById("photo2");
 const prevButton = document.getElementById("photo1");
 const nextButton = document.getElementById("photo3");
+
+function anim(images){
+  const photo2 = document.getElementById("photo2");
+  photo2.style.opacity = 0;
+  setTimeout(() => {
+    photo2setAttribute("src", `images/gallery/${img}.jpg`);
+    photo2.style.opacity = 1;
+  }, 300);
+}
 
 function updateImage() {
   imageElement.src = images[currentIndex];
