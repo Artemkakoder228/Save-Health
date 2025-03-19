@@ -92,3 +92,63 @@ nextBtn.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % images.length;
   updateImage(currentIndex);
 });
+
+const arrayOfVitamins = [
+  {
+    "id": 1,
+    "title": "Вітамін A",
+    "description": "Підтримує зір, шкіру та імунітет."
+  },
+  {
+    "id": 2,
+    "title": "Вітамін B1",
+    "description": "Допомагає в роботі нервової системи."
+  },
+  {
+    "id": 3,
+    "title": "Вітамін B6",
+    "description": "Підтримує метаболізм білків."
+  },
+  {
+    "id": 4,
+    "title": "Вітамін B12",
+    "description": "Необхідний для утворення еритроцитів."
+  },
+  {
+    "id": 5,
+    "title": "Вітамін C",
+    "description": "Потужний антиоксидант для імунної системи."
+  },
+  {
+    "id": 6,
+    "title": "Вітамін D",
+    "description": "Сприяє засвоєнню кальцію для здорових кісток."
+  },
+  {
+    "id": 7,
+    "title": "Вітамін E",
+    "description": "Захищає клітини від окисного стресу."
+  }
+];
+
+console.log(arrayOfVitamins);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const vitaminsContainer = document.getElementById("p_vitamins");
+
+  arrayOfVitamins.forEach((item) => {
+    let divVitamin = document.createElement("div");
+    divVitamin.classList.add("vitamin");
+
+    let title = document.createElement("h3");
+    title.innerText = item.title;
+
+    let description = document.createElement("p");
+    description.innerText = item.description;
+
+    divVitamin.appendChild(title);
+    divVitamin.appendChild(description);
+    
+    vitaminsContainer.appendChild(divVitamin);
+  });
+});

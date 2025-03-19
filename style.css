@@ -187,3 +187,28 @@ h2 {
   text-align: center; /* Вирівнювання тексту */
 }
 
+#p_vitamins {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto; 
+}
+
+.vitamin {
+  width: 200px;
+  height: auto;
+  border: #999999 1px solid;
+  box-shadow: 10px 10px 20px #c4c4c4;
+  padding: 15px;
+  background-color: #f9f9f9;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.vitamin p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
