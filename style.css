@@ -176,7 +176,7 @@ h2 {
   cursor: pointer;
   text-align: center;
   display: block;
-  margin: 20px auto; /* Центрування кнопки */
+  margin: 20px auto;
 }
 
 #p-love-wishes {
@@ -184,7 +184,13 @@ h2 {
   font-size: 36px;
   line-height: 40px;
   color: #ff5a26;
-  text-align: center; /* Вирівнювання тексту */
+  text-align: center; 
+}
+
+.vitamins h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 #p_vitamins {
@@ -197,18 +203,39 @@ h2 {
 }
 
 .vitamin {
-  width: 200px;
-  height: auto;
-  border: #999999 1px solid;
-  box-shadow: 10px 10px 20px #c4c4c4;
-  padding: 15px;
-  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px;
+  width: 250px;
   text-align: center;
-  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fefefe;
 }
 
-.vitamin p {
-  font-size: 14px;
-  color: #666;
-  margin-top: 5px;
+.vitamin:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f9fff9;
+}
+
+.vitamin img {
+  margin: 10px 5px;
+  border-radius: 8px;
+}
+
+.buy-btn {
+  display: block;
+  margin: 10px auto 0;
+  padding: 8px 16px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #45a049;
 }

@@ -96,42 +96,47 @@ nextBtn.addEventListener("click", () => {
 const arrayOfVitamins = [
   {
     "id": 1,
-    "title": "Вітамін A",
-    "description": "Підтримує зір, шкіру та імунітет."
+    "title": "Вітамін A 🥕👁️",
+    "description": "Підтримує зір, шкіру та імунітет 💪😊",
+    "image": "images/vitamin-a.jpg",
+    "formula": "images/All-trans-Retinol2.svg.png"
   },
   {
     "id": 2,
-    "title": "Вітамін B1",
-    "description": "Допомагає в роботі нервової системи."
+    "title": "Вітамін B1 🌾🧠",
+    "description": "Допомагає в роботі нервової системи 🧘‍♂️🧡",
+    "image": "images/045bb272459a047073bd8ef04f8055f4.webp",
+    "formula": "images/formulas/b1_formula.jpg"
   },
   {
     "id": 3,
-    "title": "Вітамін B6",
-    "description": "Підтримує метаболізм білків."
+    "title": "Вітамін B6 🥚💪",
+    "description": "Підтримує метаболізм білків ⚙️🍗",
+    "image": "images/vitamin_v6_1_13115457-400x231-1.jpg",
+    "formula": "images/formulas/b6_formula.jpg"
   },
   {
     "id": 4,
-    "title": "Вітамін B12",
-    "description": "Необхідний для утворення еритроцитів."
+    "title": "Вітамін C 🍊🛡️",
+    "description": "Потужний антиоксидант для імунної системи 🍋💥",
+    "image": "images/c.jpg",
+    "formula": "images/formulas/c_formula.jpg"
   },
   {
     "id": 5,
-    "title": "Вітамін C",
-    "description": "Потужний антиоксидант для імунної системи."
+    "title": "Вітамін D 🌞🦴",
+    "description": "Сприяє засвоєнню кальцію для здорових кісток 🦷🥛",
+    "image": "images/76b0aed7fed8925bfa62d61796a0da47.jpeg",
+    "formula": "images/formulas/d_formula.jpg"
   },
   {
     "id": 6,
-    "title": "Вітамін D",
-    "description": "Сприяє засвоєнню кальцію для здорових кісток."
-  },
-  {
-    "id": 7,
-    "title": "Вітамін E",
-    "description": "Захищає клітини від окисного стресу."
+    "title": "Вітамін E 🥑🧴",
+    "description": "Захищає клітини від окисного стресу ⚡🛡️",
+    "image": "images/23688-foto-1.jpg",
+    "formula": "images/formulas/e_formula.jpg"
   }
 ];
-
-console.log(arrayOfVitamins);
 
 document.addEventListener("DOMContentLoaded", () => {
   const vitaminsContainer = document.getElementById("p_vitamins");
@@ -146,9 +151,29 @@ document.addEventListener("DOMContentLoaded", () => {
     let description = document.createElement("p");
     description.innerText = item.description;
 
+    let imgVitamin = document.createElement("img");
+    imgVitamin.src = item.image;
+    imgVitamin.alt = item.title + " вигляд";
+    imgVitamin.style.width = "150px";
+
+    let imgFormula = document.createElement("img");
+    imgFormula.src = item.formulaImage;
+    imgFormula.alt = item.title + " формула";
+    imgFormula.style.width = "150px";
+
+    let buyButton = document.createElement("button");
+    buyButton.innerText = "Купити";
+    buyButton.classList.add("buy-btn");
+    buyButton.addEventListener("click", () => {
+      alert(`Ти купив ${item.title}!`);
+    });
+
     divVitamin.appendChild(title);
     divVitamin.appendChild(description);
-    
+    divVitamin.appendChild(imgVitamin);
+    divVitamin.appendChild(imgFormula);
+    divVitamin.appendChild(buyButton);
+
     vitaminsContainer.appendChild(divVitamin);
   });
 });

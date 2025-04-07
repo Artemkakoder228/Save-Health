@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "title": "Вітамін A 🥕👁️",
+      "description": "Підтримує зір, шкіру та імунітет 💪😊",
+      "image": "images/vitamin-a.jpg",
+      "formula": "images/images.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Вітамін B1 🌾🧠",
+      "description": "Допомагає в роботі нервової системи 🧘‍♂️🧡",
+      "image": "images/045bb272459a047073bd8ef04f8055f4.webp",
+      "formula": "images/Thiamin.svg.png"
+    },
+    {
+      "id": 3,
+      "title": "Вітамін B6 🥚💪",
+      "description": "Підтримує метаболізм білків ⚙️🍗",
+      "image": "images/vitamin_v6_1_13115457-400x231-1.jpg",
+      "formula": "images/formulas/b6_formula.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Вітамін C 🍊🛡️",
+      "description": "Потужний антиоксидант для імунної системи 🍋💥",
+      "image": "images/c.jpg",
+      "formula": "images/formulas/c_formula.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Вітамін D 🌞🦴",
+      "description": "Сприяє засвоєнню кальцію для здорових кісток 🦷🥛",
+      "image": "images/76b0aed7fed8925bfa62d61796a0da47.jpeg",
+      "formula": "images/formulas/d_formula.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Вітамін E 🥑🧴",
+      "description": "Захищає клітини від окисного стресу ⚡🛡️",
+      "image": "images/23688-foto-1.jpg",
+      "formula": "images/formulas/e_formula.jpg"
+    }
+  ]
+  
