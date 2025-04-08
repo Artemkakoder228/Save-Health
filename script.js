@@ -93,50 +93,68 @@ nextBtn.addEventListener("click", () => {
   updateImage(currentIndex);
 });
 
-const arrayOfVitamins = [
-  {
-    "id": 1,
-    "title": "Вітамін A 🥕👁️",
-    "description": "Підтримує зір, шкіру та імунітет 💪😊",
-    "image": "images/vitamin-a.jpg",
-    "formula": "images/All-trans-Retinol2.svg.png"
-  },
-  {
-    "id": 2,
-    "title": "Вітамін B1 🌾🧠",
-    "description": "Допомагає в роботі нервової системи 🧘‍♂️🧡",
-    "image": "images/045bb272459a047073bd8ef04f8055f4.webp",
-    "formula": "images/formulas/b1_formula.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Вітамін B6 🥚💪",
-    "description": "Підтримує метаболізм білків ⚙️🍗",
-    "image": "images/vitamin_v6_1_13115457-400x231-1.jpg",
-    "formula": "images/formulas/b6_formula.jpg"
-  },
-  {
-    "id": 4,
-    "title": "Вітамін C 🍊🛡️",
-    "description": "Потужний антиоксидант для імунної системи 🍋💥",
-    "image": "images/c.jpg",
-    "formula": "images/formulas/c_formula.jpg"
-  },
-  {
-    "id": 5,
-    "title": "Вітамін D 🌞🦴",
-    "description": "Сприяє засвоєнню кальцію для здорових кісток 🦷🥛",
-    "image": "images/76b0aed7fed8925bfa62d61796a0da47.jpeg",
-    "formula": "images/formulas/d_formula.jpg"
-  },
-  {
-    "id": 6,
-    "title": "Вітамін E 🥑🧴",
-    "description": "Захищає клітини від окисного стресу ⚡🛡️",
-    "image": "images/23688-foto-1.jpg",
-    "formula": "images/formulas/e_formula.jpg"
-  }
-];
+fetch('./vitamins.json')
+  .then(response => response.json())
+  .then(data => {
+    const vitaminsContainer = document.getElementById("p_vitamins");
+    data.forEach(item => {
+      let divVitamin = document.createElement("div");
+      divVitamin.classList.add("vitamin");
+      divVitamin.innerHTML = `
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h3 style="font-size: 18px; margin-bottom: 10px;">${item.title}</h3>
+          <p style="font-size: 14px; margin-bottom: 10px;">${item.description}</p>
+          <img src="${item.image}" alt="Зображення вітаміну" style="width: 120px; height: 120px; object-fit: cover; display: block; margin: 0 auto;" onerror="this.onerror=null; this.src='images/default.jpg';">
+          <button style="margin-top: 10px; font-size: 14px; padding: 5px 10px; cursor: pointer;" onclick="showFormula('${item.formula}')">Переглянути формулу</button>
+        </div>
+      `;
+      vitaminsContainer.appendChild(divVitamin);
+    });
+  })
+  .catch(error => console.error('Error fetching vitamins:', error));
+
+// Функція для показу формули
+function showFormula(formulaImage) {
+  const modal = document.createElement("div");
+  modal.style.position = "fixed";
+  modal.style.top = "0";
+  modal.style.left = "0";
+  modal.style.width = "100%";
+  modal.style.height = "100%";
+  modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  modal.style.display = "flex";
+  modal.style.justifyContent = "center";
+  modal.style.alignItems = "center";
+  modal.style.zIndex = "1000";
+
+  const img = document.createElement("img");
+  img.src = formulaImage;
+  img.alt = "Формула вітаміну";
+  img.style.width = "300px";
+  img.style.height = "300px";
+  img.style.objectFit = "contain";
+  img.style.border = "2px solid white";
+
+  const closeButton = document.createElement("button");
+  closeButton.innerText = "Закрити";
+  closeButton.style.position = "absolute";
+  closeButton.style.top = "20px";
+  closeButton.style.right = "20px";
+  closeButton.style.padding = "10px 20px";
+  closeButton.style.fontSize = "16px";
+  closeButton.style.cursor = "pointer";
+  closeButton.style.backgroundColor = "white";
+  closeButton.style.border = "none";
+  closeButton.style.borderRadius = "5px";
+
+  closeButton.addEventListener("click", () => {
+    document.body.removeChild(modal);
+  });
+
+  modal.appendChild(img);
+  modal.appendChild(closeButton);
+  document.body.appendChild(modal);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const vitaminsContainer = document.getElementById("p_vitamins");
