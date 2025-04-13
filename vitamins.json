@@ -18,28 +18,28 @@
       "title": "Вітамін B6 🥚💪",
       "description": "Підтримує метаболізм білків ⚙️🍗",
       "image": "images/vitamin_v6_1_13115457-400x231-1.jpg",
-      "formula": "images/formulas/b6_formula.jpg"
+      "formula": "images/vitamin-V6.webp"
     },
     {
       "id": 4,
       "title": "Вітамін C 🍊🛡️",
       "description": "Потужний антиоксидант для імунної системи 🍋💥",
       "image": "images/c.jpg",
-      "formula": "images/formulas/c_formula.jpg"
+      "formula": "images/L-Ascorbic_acid.svg_.png"
     },
     {
       "id": 5,
       "title": "Вітамін D 🌞🦴",
       "description": "Сприяє засвоєнню кальцію для здорових кісток 🦷🥛",
       "image": "images/76b0aed7fed8925bfa62d61796a0da47.jpeg",
-      "formula": "images/formulas/d_formula.jpg"
+      "formula": "images/istockphoto-466581308-612x612.jpg"
     },
     {
       "id": 6,
       "title": "Вітамін E 🥑🧴",
       "description": "Захищає клітини від окисного стресу ⚡🛡️",
       "image": "images/23688-foto-1.jpg",
-      "formula": "images/formulas/e_formula.jpg"
+      "formula": "images/formula-of-vitamin-e.jpg"
     }
   ]
   
