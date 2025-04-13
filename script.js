@@ -194,4 +194,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
     vitaminsContainer.appendChild(divVitamin);
   });
+
+  let coinBalance = 50; // Початковий баланс карбованців
+
+  // Масив фотографій вітамінів
+  const vitaminImages = [
+    "images/gallery/254.jpg",
+    "images/gallery/14190.jpg",
+    "images/gallery/2149611232.jpg",
+    "images/gallery/2148168440.jpg",
+    "images/gallery/2149611193.jpg",
+    "images/gallery/2149611238.jpg"
+  ];
+
+  // Оновлення балансу карбованців
+  function updateCoinBalance() {
+    document.getElementById('coin_balance').innerText = `Баланс карбованців: ${coinBalance}`;
+  }
+
+  // Обробник для кнопки "Купити карбованці"
+  document.getElementById('buy_coins').addEventListener('click', () => {
+    coinBalance += 50; // Додаємо 50 карбованців
+    updateCoinBalance();
+    alert("Ви купили 50 карбованців!");
+  });
+
+  // Обробник для кнопки "Крутити рулетку"
+  document.getElementById('spin_roulette').addEventListener('click', () => {
+    if (coinBalance < 5) {
+      alert("Недостатньо карбованців для прокрутки рулетки!");
+      return;
+    }
+
+    coinBalance -= 5; // Віднімаємо 5 карбованців за прокрутку
+    updateCoinBalance();
+
+    const rouletteResult = document.getElementById('roulette_result');
+    rouletteResult.innerHTML = ''; // Очищаємо попередній результат
+
+    // Прокрутка картинок
+    let spinIndex = 0;
+    const spinInterval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * vitaminImages.length);
+      rouletteResult.innerHTML = `
+        <img src="${vitaminImages[randomIndex]}" alt="Вітамін" 
+             style="width: 150px; height: 150px; object-fit: cover; transform: translateX(${spinIndex * 20}px); transition: transform 0.2s;">
+      `;
+      spinIndex++;
+
+      if (spinIndex > 10) { // Прокрутка завершується після 10 ітерацій
+        clearInterval(spinInterval);
+
+        // Випадковий результат
+        const finalIndex = Math.floor(Math.random() * vitaminImages.length);
+        rouletteResult.innerHTML = `
+          <h3>Вітаємо! Ви виграли:</h3>
+          <img src="${vitaminImages[finalIndex]}" alt="Вітамін" style="width: 150px; height: 150px; object-fit: cover;">
+        `;
+      }
+    }, 200); // Інтервал між змінами картинок
+  });
 });
